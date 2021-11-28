@@ -11,12 +11,12 @@ import TaskSquareDay from './components/TaskSquareDay'
 function App() {
     return (
         <div className="fixed relative flex flex-col w-screen h-screen overflow-x-hidden bg-gray-900">
-	    <div className="text-center">AMOGUS</div>
+	    <div className="text-gray-500 mt-2 font-extrabold text-5xl text-center">AMOGUS TRACKER</div>
         {/*<div className="items-center justify-center font-mono text-4xl border-2 max-w-prose">
                 Hew
             </div>*/}
         <div className="font-mono text-2xl text-gray-300 h-96 align-center">
-            <div className="w-2/3 py-12 m-auto mt-16 bg-gray-800" style={{borderRadius: 70 + 'px', maxWidth: 349 + 'px', marginBottom: -20+"px"}}>
+            <div className="w-2/3 py-12 m-auto mt-5 bg-gray-800" style={{borderRadius: 70 + 'px', maxWidth: 349 + 'px', marginBottom: -20+"px", marginTop: -20+"px"}}>
                 <p className="text-center">Current Streak</p>
                 <div className="content-center justify-center m-auto font-mono font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-tr from-blue-800 to-purple-400 align-center rounded-3xl" style={{fontSize: 8 + "em", lineHeight: 1}}>
             23
