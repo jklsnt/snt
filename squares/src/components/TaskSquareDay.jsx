@@ -6,7 +6,9 @@ export default function TaskSquareDay(props) {
 	       
 	       <TaskSquare textstuff="Brush Teeth" textstuff2={2} textstuff3={3} colors={[37, 99, 235, 1]}></TaskSquare>
 	       <TaskSquare textstuff="Eat Dog" textstuff2={0} textstuff3={1} colors={[220, 72, 5, 1]}></TaskSquare>
-	       <TaskSquare textstuff="Burry Bodies" textstuff2={1} textstuff3={1} colors={[20, 20, 20, 1]}></TaskSquare>
+	       <TaskSquare textstuff="Burry Bodies" textstuff2={1} textstuff3={1} colors={[20, 20, 20, 1]}></TaskSquare>	       <TaskSquare textstuff="Brush Teeth" textstuff2={2} textstuff3={3} colors={[37, 99, 235, 1]}></TaskSquare>
+	       <TaskSquare textstuff="Eat Dog" textstuff2={0} textstuff3={1} colors={[220, 72, 5, 1]}></TaskSquare>
+
 	   </div>
 }
     
