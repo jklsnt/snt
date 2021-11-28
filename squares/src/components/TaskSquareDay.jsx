@@ -3,6 +3,7 @@ import TaskSquare from './TaskSquare'
 
 export default function TaskSquareDay(props) {
     return <div className="flex">
-	       <TaskSquare></TaskSquare>
+	       <TaskSquare textstuff="urbad" textstuff2={2}>eee</TaskSquare>
 	   </div>
 }
+    
