@@ -15,7 +15,7 @@ function App() {
                 Hew
             </div>*/}
         <div className="font-mono text-2xl text-gray-300 h-96 align-center">
-            <div className="w-2/3 py-12 m-auto my-16 bg-gray-800" style={{borderRadius: 70 + 'px'}}>
+            <div className="w-2/3 py-12 m-auto my-16 bg-gray-800" style={{borderRadius: 70 + 'px', maxWidth: 349 + 'px'}}>
                 <p className="text-center">Current Streak</p>
                 <div className="content-center justify-center m-auto font-mono font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-tr from-blue-800 to-purple-400 align-center rounded-3xl" style={{fontSize: 8 + "em", lineHeight: 1}}>
             23
