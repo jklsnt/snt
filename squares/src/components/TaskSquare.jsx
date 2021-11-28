@@ -1,6 +1,6 @@
 import React from 'react';
 
 export default function TaskSquare(props) {
-    return <div className="w-15 h-15 bg-blue-600"></div>
+    return <div className="w-20 h-20 m-1 rounded-md bg-blue-600"></div>
 }
 
