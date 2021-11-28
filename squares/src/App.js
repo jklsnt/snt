@@ -22,7 +22,9 @@ function App() {
         <div className="w-2 text-4xl"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></div>
         <TaskSquareDay/>
             <div className="w-full">
-                <SquaresDisplay squares_data={[[1, 2, 3, 4, 5, 6, 7], [1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7], [1, 2, 3, 10, 5, 6, 7], ].flat()}></SquaresDisplay>
+		<div className="funzies w-auto">
+                    <SquaresDisplay squares_data={[[1, 2, 3, 4, 5, 6, 7], [1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7], [1, 2, 3, 10, 5, 6, 7], ].flat()}></SquaresDisplay>
+		</div>
             </div>
         </div>
     );
