@@ -1,6 +1,6 @@
 import React from 'react';
 
 export default function Square(props) {
-    return <div className="h-10 w-10 bg-blue-700"></div>
+    return <div className="w-12 h-12 rounded-md" style={{"background-color": `rgba(50, 108, 204, ${props.data / props.scalar})`}}></div>
 }
 

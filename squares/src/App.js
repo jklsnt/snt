@@ -3,12 +3,13 @@ import SquaresDisplay from './components/SquaresDisplay'
 
 function App() {
     return (
-        <div className="h-screen w-screen fixed flex flex-col relative">
-            <div className="max-w-prose border-2 border-blue font-mono text-4xl items-center justify-center">
-                Hi
+        <div className="fixed relative flex flex-col w-screen h-screen overflow-x-hidden">
+            <div className="items-center justify-center font-mono text-4xl border-2 max-w-prose">
+                Hew
             </div>
-            <div className="absolute bottom-0 w-screen h-48 border-2 border-green">
-                <SquaresDisplay squares_data={[1, 2, 3, 4, 5, 6, 7]}></SquaresDisplay>
+        <div className="w-2 text-4xl border border-black"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></div>
+            <div className="w-full border-2 border-green">
+                <SquaresDisplay squares_data={[[1, 2, 3, 4, 5, 6, 7], [1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7], [1, 2, 3, 10, 5, 6, 7], ]}></SquaresDisplay>
             </div>
         </div>
     );
