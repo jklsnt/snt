@@ -3,8 +3,7 @@ import SquareBatch from './SquareBatch.jsx';
 
 export default function SquaresDisplay(props) {
     console.assert(props.squares_data.length > 0);
-    console.log(new Date().getDay())
-    console.log(props.squares_data)
+    console.log(new Date().getWeekOfYear())
 
     // spaghet ahead: bunching iterators
     let modified_seq = Array(6- new Date().getDay()).fill(0).concat(props.squares_data);
@@ -20,7 +19,7 @@ export default function SquaresDisplay(props) {
         idx += 7;
     }
     console.log(squares_data)
-    return <div className="flex flex-wrap w-shrink inline-block m-auto rounded-lg border space-around p-4 border-black bg-grey-700 space-y-2">
+    return <div className="flex flex-wrap w-shrink inline-block m-auto rounded-lg space-around p-4 bg-grey-700 space-y-2">
         {squares_data.map((row, i) => <SquareBatch data={row} scalar={props.squares_data.reduce((a, c) => Math.max(a, c), -Infinity)} label={"hew"} key={i}></SquareBatch>)}
         </div>
 }
