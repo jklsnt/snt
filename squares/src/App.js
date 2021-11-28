@@ -9,7 +9,7 @@ function App() {
             </div>
         <div className="w-2 text-4xl border border-black"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></div>
             <div className="w-full border-2 border-green">
-                <SquaresDisplay squares_data={[[2, 3, 4, 5, 6, 7], [1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7], [1, 2, 3, 10, 5, 6, 7], ].flat()}></SquaresDisplay>
+                <SquaresDisplay squares_data={[[1, 2, 3, 4, 5, 6, 7], [1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7], [1, 2, 3, 10, 5, 6, 7], ].flat()}></SquaresDisplay>
             </div>
         </div>
     );

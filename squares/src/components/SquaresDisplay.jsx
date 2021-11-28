@@ -7,7 +7,7 @@ export default function SquaresDisplay(props) {
     console.log(props.squares_data)
 
     // spaghet ahead: bunching iterators
-    let modified_seq = Array(7- new Date().getDay()).fill(0).concat(props.squares_data);
+    let modified_seq = Array(6- new Date().getDay()).fill(0).concat(props.squares_data);
     const squares_data = [];
     let idx = 0;
     while (idx < modified_seq.length) {
