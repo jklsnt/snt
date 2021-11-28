@@ -11,6 +11,7 @@ import TaskSquareDay from './components/TaskSquareDay'
 function App() {
     return (
         <div className="fixed relative flex flex-col w-screen h-screen overflow-x-hidden bg-gray-900">
+	    <div className="text-center">AMOGUS</div>
         {/*<div className="items-center justify-center font-mono text-4xl border-2 max-w-prose">
                 Hew
             </div>*/}
