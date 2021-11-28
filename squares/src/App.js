@@ -11,22 +11,25 @@ import TaskSquareDay from './components/TaskSquareDay'
 function App() {
     return (
         <div className="fixed relative flex flex-col w-screen h-screen overflow-x-hidden bg-gray-900">
-            <div className="items-center justify-center font-mono text-4xl border-2 max-w-prose">
+        {/*<div className="items-center justify-center font-mono text-4xl border-2 max-w-prose">
                 Hew
-            </div>
-        <div className="border border-2 border-red-400 h-96">
-            <div className="content-center justify-center w-1/2 m-auto font-mono text-3xl text-center text-gray-100 border-2 border-red-700 align-center rounded-3xl">
-        hew
+            </div>*/}
+        <div className="font-mono text-2xl text-gray-300 h-96 align-center">
+            <div className="w-2/3 py-12 m-auto my-16 bg-gray-800" style={{borderRadius: 70 + 'px'}}>
+                <p className="text-center">Current Streak</p>
+                <div className="content-center justify-center m-auto font-mono font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-tr from-blue-800 to-purple-400 align-center rounded-3xl" style={{fontSize: 8 + "em", lineHeight: 1}}>
+            23
+                </div>
             </div>
         </div>
-        <div className="w-2 text-4xl"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></div>
-        <TaskSquareDay/>
-            <div className="w-full">
+        <div className="w-2 text-4xl"><br/></div>
+	    <TaskSquareDay/>
+	    <div className="w-full">
 		<div className="funzies w-auto">
-                    <SquaresDisplay squares_data={[[1, 2, 3, 4, 5, 6, 7], [1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7], [1, 2, 3, 10, 5, 6, 7], ].flat()}></SquaresDisplay>
+		    <SquaresDisplay squares_data={[[1, 2, 3, 4, 5, 6, 7], [1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7], [1, 2, 3, 10, 5, 6, 7], ].flat()}></SquaresDisplay>
 		</div>
-            </div>
-        </div>
+	    </div>
+	</div>
     );
 }
 
