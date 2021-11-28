@@ -1,5 +1,5 @@
 import React from 'react';
-import TaskSquare form './TaskSquare.jsx'
+import TaskSquare from './TaskSquare'
 
 export default function TaskSquareDay(props) {
     return <div className="flex">
