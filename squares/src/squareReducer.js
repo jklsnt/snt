@@ -41,7 +41,7 @@ export default function (state=INITIAL_STATE, { action, day_id, habit_id }) {
                 counts: {
                     [day_id]: {
                         [habit_id]: {
-                            $set: (state.counts[day_id][habit_id] + state.maxima[habit_id] - 1) % (state.maxima[habit_id] + 1),
+                            $set: (state.counts[day_id][habit_id] + state.maxima[habit_id]) % (state.maxima[habit_id] + 1),
                         }
                     }
                 }

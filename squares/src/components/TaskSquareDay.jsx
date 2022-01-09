@@ -11,12 +11,12 @@ export default function TaskSquareDay({ counts1, maxima, dispatch }) {
     ]
     return <div className="flex flex-wrap items-baseline w-5/6 px-0 py-0 m-auto bg-gray-800 rounded-2xl" style={{marginTop: -20+"px", maxWidth: 507+'px'}}>
         { zip(buttons, counts1, maxima).map(([ attrs, c, m ], i) => <TaskSquare
-            textstuff={attrs['name']}
-            textstuff2={c}
-            textstuff3={m}
-            setCount={() => {
-                dispatch({ action: 'inc_wrap', day_id: 0, habit_id: i })
-            }}
+            name={attrs['name']}
+            current={c}
+            maximum={m}
+            increment={(_) => { dispatch({ action: 'inc_wrap', day_id: 0, habit_id: i }) }}
+            decrement={(e) => { dispatch({ action: 'dec_wrap', day_id: 0, habit_id: i });
+                                e.preventDefault(); }}
             colors={attrs['colors']}
             key={i}
         />) }

@@ -14,14 +14,12 @@ function App() {
     const og_thing = [[1, 1, 0], [4, 4, 4], [0, 0, 0], [3, 1, 3], [4, 2, 0], [1, 0, 1], [3, 4, 3], [2, 4, 4], [2, 3, 2], [1, 2, 2], [4, 1, 0], [0, 0, 2], [1, 0, 3], [3, 1, 1], [3, 4, 0], [1, 0, 0], [4, 1, 1], [0, 0, 0], [1, 0, 3], [4, 1, 4], [2, 1, 3], [1, 2, 3], [4, 4, 2], [2, 1, 2], [1, 0, 1], [3, 0, 4], [2, 3, 4], [1, 4, 4], [3, 0, 4], [2, 3, 4], [0, 2, 2], [4, 0, 4], [3, 4, 4], [2, 1, 0], [0, 0, 0]];
 
     const [ squares, sq_dispatch ] = useReducer(squareReducer, { counts: og_thing, maxima: [2, 4, 6] });
-    console.log('today', squares.counts[0])
-
     const sum_today  = squares.counts[0].reduce((a, c) => a + c, 0);
     const sum_maxima = squares.maxima   .reduce((a, c) => a + c, 0);
 
     return (
         <div className="fixed relative flex flex-col w-screen h-screen overflow-x-hidden bg-gray-900">
-	    <div className="mt-2 text-5xl font-extrabold text-center text-gray-500">MOGUS TRACKER</div>
+        <div className="mt-2 text-5xl font-extrabold text-center text-gray-500">MOGUS TRACKER</div>
         {/*<div className="items-center justify-center font-mono text-4xl border-2 max-w-prose">
                 Hew
             </div>*/}
@@ -34,13 +32,13 @@ function App() {
             </div>
         </div>
         <div className="w-2 text-xl"><br/></div>
-	    <TaskSquareDay counts1={squares.counts[0]} maxima={squares.maxima} dispatch={sq_dispatch}/>
-	    <div className="w-full">
-		<div className="w-5/6 pb-12 m-auto mt-8 bg-gray-800 rounded-2xl" style={{maxWidth: 507+'px'}}>
-		    <SquaresDisplay squares_data={squares}></SquaresDisplay>
-		</div>
-	    </div>
-	</div>
+        <TaskSquareDay counts1={squares.counts[0]} maxima={squares.maxima} dispatch={sq_dispatch}/>
+        <div className="w-full">
+        <div className="w-5/6 pb-12 m-auto mt-8 bg-gray-800 rounded-2xl" style={{maxWidth: 507+'px'}}>
+            <SquaresDisplay squares_data={squares}></SquaresDisplay>
+        </div>
+        </div>
+    </div>
     );
 }
 
