@@ -4,14 +4,15 @@ import { DateTime } from 'luxon';
 
 export default function SquaresDisplay(props) {
     console.assert(props.squares_data.counts.length > 0);
-    //console.log(props)
 
     const maxima = props.squares_data.maxima;
 
     const ROW_WIDTH = 7;
 
     // spaghet ahead: bunching iterators
-    let modified_seq = Array(ROW_WIDTH-1- new Date().getDay()).fill(0).concat(props.squares_data.counts);
+    let modified_seq = Array(ROW_WIDTH-1- new Date().getDay())
+        .fill(props.squares_data.maxima.map(_ => 0))
+        .concat(props.squares_data.counts);
     const squares_data = [];
     let idx = 0;
     while (idx < modified_seq.length) {
@@ -28,7 +29,7 @@ export default function SquaresDisplay(props) {
             counts={row}
             start_day={i*ROW_WIDTH}
             maxima={maxima}
-            label={DateTime.now().minus({weeks: i}).startOf('week').toFormat('MMM dd')} key={i}
+            label={DateTime.now().minus({weeks: i, days: -1}).startOf('week').minus({days: 1}).toFormat('MMM dd')} key={i}
         />)}
         </div>
 }

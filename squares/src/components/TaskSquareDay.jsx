@@ -14,8 +14,8 @@ export default function TaskSquareDay({ counts1, maxima, dispatch }) {
             name={attrs['name']}
             current={c}
             maximum={m}
-            increment={(_) => { dispatch({ action: 'inc_wrap', day_id: 0, habit_id: i }) }}
-            decrement={(e) => { dispatch({ action: 'dec_wrap', day_id: 0, habit_id: i });
+            increment={(_) => { dispatch({ action: 'inc', day_id: 0, habit_id: i }) }}
+            decrement={(e) => { dispatch({ action: 'dec', day_id: 0, habit_id: i });
                                 e.preventDefault(); }}
             colors={attrs['colors']}
             key={i}

@@ -3,6 +3,7 @@ import SquaresDisplay from './components/SquaresDisplay';
 import TaskSquareDay from './components/TaskSquareDay';
 
 import squareReducer from './squareReducer';
+import { zip } from './util';
 
 // https://stackoverflow.com/a/7765814/10372825
  Date.prototype.getWeek = function() {
@@ -14,8 +15,8 @@ function App() {
     const og_thing = [[1, 1, 0], [4, 4, 4], [0, 0, 0], [3, 1, 3], [4, 2, 0], [1, 0, 1], [3, 4, 3], [2, 4, 4], [2, 3, 2], [1, 2, 2], [4, 1, 0], [0, 0, 2], [1, 0, 3], [3, 1, 1], [3, 4, 0], [1, 0, 0], [4, 1, 1], [0, 0, 0], [1, 0, 3], [4, 1, 4], [2, 1, 3], [1, 2, 3], [4, 4, 2], [2, 1, 2], [1, 0, 1], [3, 0, 4], [2, 3, 4], [1, 4, 4], [3, 0, 4], [2, 3, 4], [0, 2, 2], [4, 0, 4], [3, 4, 4], [2, 1, 0], [0, 0, 0]];
 
     const [ squares, sq_dispatch ] = useReducer(squareReducer, { counts: og_thing, maxima: [2, 4, 6] });
-    const sum_today  = squares.counts[0].reduce((a, c) => a + c, 0);
-    const sum_maxima = squares.maxima   .reduce((a, c) => a + c, 0);
+    const habit_sum = zip(squares.counts[0], squares.maxima)
+        .reduce((a, [c, m]) => a + Math.min(1, c/m), 0);
 
     return (
         <div className="fixed relative flex flex-col w-screen h-screen overflow-x-hidden bg-gray-900">
@@ -27,7 +28,7 @@ function App() {
             <div className="w-2/3 py-12 m-auto mt-5 bg-gray-800" style={{borderRadius: 70 + 'px', maxWidth: 349 + 'px', marginBottom: -20+"px", marginTop: -20+"px"}}>
                 <p className="text-center">Current Streak</p>
                 <div className="content-center justify-center m-auto font-mono font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-tr from-blue-800 to-purple-400 align-center rounded-3xl" style={{fontSize: 8 + "em", lineHeight: 1}}>
-        { sum_today >= sum_maxima ? 12 : 11 }
+        { habit_sum >= squares.maxima.length ? /* TODO */ 12 : 11 }
                 </div>
             </div>
         </div>
