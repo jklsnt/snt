@@ -1,20 +1,25 @@
 import React from 'react';
 import TaskSquare from './TaskSquare'
 
-export default function TaskSquareDay(props) {
+import { zip } from '../util';
+
+export default function TaskSquareDay({ counts1, maxima, dispatch }) {
     const buttons = [
-        {'name': "Brush Teeth", "current": 1, "needed": 2, 'colors': [37, 99, 235]},
-        {'name': "Burrie Body", "current": 0, "needed": 1, 'colors': [218, 72, 5]},
-        {'name': "Meditate", "current": 1, "needed": 1, 'colors': [134, 35, 171]},
+        {'name': "Brush Teeth", 'colors': [37, 99, 235]},
+        {'name': "Burrie Body", 'colors': [218, 72, 5]},
+        {'name': "Meditate",    'colors': [134, 35, 171]},
     ]
-    const counts = [...buttons.map(x => x.current)];
-    console.log('hrrrrrrrrrrrrrrrrrrrrrrrrr')
-    return <div className="flex w-5/6 py-0 px-0 m-auto bg-gray-800 rounded-2xl flex-wrap items-baseline" style={{marginTop: -20+"px", maxWidth: 507+'px'}}>
-        {
-            buttons.map((attrs, i) => {
-                return <TaskSquare textstuff={attrs['name']} textstuff2={attrs['current']} setCount={(num) => { counts[i] = num; console.log(counts); props.updateTodayCounts(counts); }} textstuff3={attrs['needed']} colors={attrs['colors']} key={i} />
-            })
-        }
+    return <div className="flex flex-wrap items-baseline w-5/6 px-0 py-0 m-auto bg-gray-800 rounded-2xl" style={{marginTop: -20+"px", maxWidth: 507+'px'}}>
+        { zip(buttons, counts1, maxima).map(([ attrs, c, m ], i) => <TaskSquare
+            textstuff={attrs['name']}
+            textstuff2={c}
+            textstuff3={m}
+            setCount={() => {
+                dispatch({ action: 'inc_wrap', day_id: 0, habit_id: i })
+            }}
+            colors={attrs['colors']}
+            key={i}
+        />) }
 	   </div>
 }
     
