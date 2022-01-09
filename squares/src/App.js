@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import SquaresDisplay from './components/SquaresDisplay'
-import TaskSquareDay from './components/TaskSquareDay'
+import React, { useState, useReducer } from 'react';
+import SquaresDisplay from './components/SquaresDisplay';
+import TaskSquareDay from './components/TaskSquareDay';
+
+import squareReducer from './squareReducer';
 
 // https://stackoverflow.com/a/7765814/10372825
  Date.prototype.getWeek = function() {
@@ -9,12 +11,28 @@ import TaskSquareDay from './components/TaskSquareDay'
 }
 
 function App() {
+    //const [ squares, sq_dispatch ] = useReducer((state, action) => {
+    //    switch (action.type) {
+    //        case 'inc':
+    //            return { counts: state.counts.map((v, i) => i == action.day_id ? [> TODO <] : v) };
+    //    }
+    //})
+
+    const og_thing = [[1, 1, 0], [3, 1, 3], [4, 2, 0], [1, 0, 1], [3, 4, 3], [2, 4, 4], [2, 3, 2], [1, 2, 2], [4, 1, 0], [0, 0, 2], [1, 0, 3], [3, 1, 1], [3, 4, 0], [1, 0, 0], [4, 1, 1], [0, 0, 0], [1, 0, 3], [4, 1, 4], [2, 1, 3], [1, 2, 3], [4, 4, 2], [2, 1, 2], [1, 0, 1], [3, 0, 4], [2, 3, 4], [1, 4, 4], [3, 0, 4], [2, 3, 4], [0, 2, 2], [4, 0, 4], [3, 4, 4], [2, 1, 0], [0, 0, 0]];
+
+    const [ squares, sq_dispatch ] = useReducer(squareReducer, { counts: og_thing, maxima: [2, 4, 6] });
+    console.log(squares.counts[0])
+    function handleClick() {
+        sq_dispatch({ action: 'inc_wrap', day_id: 0, habit_id: 0 });
+    }
+
     const [ counts, setCounts ] = useState([]);
 
-    const thing = [1, 1, 0, 3, 1, 3, 4, 2, 0, 1, 0, 1, 3, 4, 3, 2, 4, 4, 2, 3, 2, 1, 2, 2, 4, 1, 0, 0, 0, 2, 1, 0, 3, 3, 1, 1, 3, 4, 0, 1, 0, 0, 4, 1, 1, 0, 0, 0, 1, 0, 3, 4, 1, 4, 2, 1, 3, 1, 2, 3, 4, 4, 2, 2, 1, 2, 1, 0, 1, 3, 0, 4, 2, 3, 4, 1, 4, 4, 3, 0, 4, 2, 3, 4, 0, 2, 2, 4, 0, 4, 3, 4, 4, 2, 1, 0, 0, 0, 0, 3];
+    const thing = og_thing.flat();
+
     return (
-        <div className="fixed relative flex flex-col w-screen h-screen overflow-x-hidden bg-gray-900">
-	    <div className="text-gray-500 mt-2 font-extrabold text-5xl text-center">MOGUS TRACKER</div>
+        <div onClick={handleClick} className="fixed relative flex flex-col w-screen h-screen overflow-x-hidden bg-gray-900">
+	    <div className="mt-2 text-5xl font-extrabold text-center text-gray-500">MOGUS TRACKER</div>
         {/*<div className="items-center justify-center font-mono text-4xl border-2 max-w-prose">
                 Hew
             </div>*/}
