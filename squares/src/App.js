@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import SquaresDisplay from './components/SquaresDisplay';
 import TaskSquareDay from './components/TaskSquareDay';
 
@@ -21,6 +21,9 @@ function App() {
             .map(countd => completion(countd, squares.maxima)),
         opacity => opacity >= 1)
         .reduce((a, c) => a + c, 0);
+    const streak_text = `${ completions }${ completion(squares.counts[0], squares.maxima) >= 1? '+' : '' }`
+
+    useEffect(() => { document.title = `${streak_text} days | mogus tracker` }, [streak_text]); // https://dev.to/luispa/how-to-add-a-dynamic-title-on-your-react-app-1l7k
 
     return (
         <div className="fixed relative flex flex-col w-screen h-screen overflow-x-hidden bg-gray-900 select-none">
@@ -32,7 +35,7 @@ function App() {
             <div className="w-2/3 py-12 m-auto mt-5 bg-gray-800" style={{borderRadius: 70 + 'px', maxWidth: 349 + 'px', marginBottom: -20+"px", marginTop: -20+"px"}}>
                 <p className="text-center">Current Streak</p>
                 <div className="content-center justify-center m-auto font-mono font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-tr from-blue-800 to-purple-400 align-center rounded-3xl" style={{fontSize: 8 + "em", lineHeight: 1}}>
-        { completions }{ completion(squares.counts[0], squares.maxima) >= 1? '+' : '' }
+                    {streak_text}
                 </div>
             </div>
         </div>
