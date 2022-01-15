@@ -4,7 +4,7 @@ import TaskSquareDay from './components/TaskSquareDay';
 
 import squareReducer from './squareReducer';
 import { completion } from './semantics';
-import { mapUntil } from './util';
+import { mapUntil, zip } from './util';
 
 //// https://stackoverflow.com/a/7765814/10372825
 // Date.prototype.getWeek = function() {
@@ -17,12 +17,12 @@ function Dashboard() {
     const maxima = og_thing.map(_ => [2, 1, 3]);
 
     const [ squares, sq_dispatch ] = useReducer(squareReducer, { counts: og_thing, maxima: maxima });
-    const completions = mapUntil(zip(squares.count, squares.maxima)
+    const completions = mapUntil(zip(squares.counts, squares.maxima)
             .slice(1)
-            .map(countd, maxima => completion(countd, maxima)),
+            .map(([countd, maxima]) => completion(countd, maxima)),
         opacity => opacity >= 1)
         .reduce((a, c) => a + c, 0);
-    const streak_text = `${ completions }${ completion(squares.counts[0], squares.maxima) >= 1? '+' : '' }`
+    const streak_text = `${ completions }${ completion(squares.counts[0], squares.maxima[0]) >= 1? '+' : '' }`
 
     useEffect(() => { document.title = `${streak_text} days | mogus tracker` }, [streak_text]); // https://dev.to/luispa/how-to-add-a-dynamic-title-on-your-react-app-1l7k
 
@@ -41,7 +41,7 @@ function Dashboard() {
             </div>
         </div>
         <div className="w-2 text-xl"><br/></div>
-        <TaskSquareDay counts1={squares.counts[0]} maxima={squares.maxima} dispatch={sq_dispatch}/>
+        <TaskSquareDay counts1={squares.counts[0]} maxima={squares.maxima[0]} dispatch={sq_dispatch}/>
         <div className="w-full">
         <div className="w-5/6 pb-12 m-auto mt-8 bg-gray-800 rounded-2xl" style={{maxWidth: 507+'px'}}>
             <SquaresDisplay squares_data={squares}></SquaresDisplay>
